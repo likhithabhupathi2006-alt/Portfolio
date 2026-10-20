@@ -129,8 +129,10 @@ VITE_API_URL=http://localhost:5000
 > Note: Render's free tier sleeps when idle, so the first request after a while may take up to a minute.
 
 ## 📸 Screenshots
-
-<!-- Add screenshots: ![Home](screenshots/home.png) -->
+<img width="1322" height="615" alt="image" src="https://github.com/user-attachments/assets/5ff2ef9f-8a8e-4855-824d-476574b5c80e" />
+<img width="1035" height="688" alt="image" src="https://github.com/user-attachments/assets/87cd634e-09c5-4bcb-b258-5a900b160b94" />
+<img width="1053" height="1277" alt="image" src="https://github.com/user-attachments/assets/8955df8d-7f40-4ebe-b183-3fbc81db10e2" />
+<img width="1279" height="559" alt="image" src="https://github.com/user-attachments/assets/d1e93e81-49c2-41aa-8f29-99c457bd53ad" />
 
 ## 👩‍💻 Author
 
