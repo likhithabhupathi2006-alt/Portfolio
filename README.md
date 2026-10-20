@@ -1,7 +1,7 @@
 # Personal Portfolio (MERN)
 Full-stack portfolio for Bhupathi Likhitha: React (Vite) + Express + MongoDB (Mongoose).
 
-**Live site:** <ADD VERCEL/NETLIFY LINK> | **API:** <ADD RENDER/RAILWAY LINK>
+**Live site:** <https://portfolio-tan-tau-23.vercel.app/> | **API:** <https://portfolio-me4o.onrender.com/>
 
 ## Features
 Typewriter hero, scroll animations (Framer Motion), animated skill bars, filterable project cards, timeline, achievements, dark/light toggle, responsive layout, contact form saved to MongoDB, CV download (PDF + DOCX) served from Express.
