@@ -23,10 +23,20 @@ nav{display:flex;gap:16px;align-items:center}nav a{text-transform:capitalize;col
 .card{background:var(--card);padding:22px;border-radius:14px;box-shadow:0 4px 20px #0003}
 .badge,.chip{background:var(--card);color:var(--fg);border:1px solid var(--ac);padding:4px 12px;border-radius:20px;font-size:.85rem;cursor:pointer}
 .chip.on{background:var(--ac);color:#fff}
-.tl{border-left:3px solid var(--ac);padding-left:24px}.tl-item{margin-bottom:28px;position:relative}
-.tl-item:before{content:'';position:absolute;left:-33px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--ac2)}
+.tl{position:relative;margin-left:8px;padding:0 0 12px 28px;border-left:3px solid var(--ac)}
+.tl-item{position:relative;margin-bottom:22px;background:var(--card);padding:16px 18px;border-radius:12px;box-shadow:0 4px 16px #0002}
+.tl-item h3{margin:4px 0}.tl-item p{margin:2px 0}
+.tl-item:before{content:'';position:absolute;left:-37px;top:20px;width:14px;height:14px;border-radius:50%;background:var(--ac2);border:3px solid var(--bg)}
+.tl:after{content:'';position:absolute;left:-9px;bottom:-6px;width:15px;height:15px;border-radius:50%;background:var(--ac)}
 .muted{color:var(--mut)}.ach li{margin:10px 0}
 .form{display:flex;flex-direction:column;gap:12px;max-width:600px}
 .form input,.form textarea{padding:12px;border-radius:8px;border:1px solid var(--ac);background:var(--card);color:var(--fg);font:inherit}
 footer{text-align:center;padding:30px;color:var(--mut)}
+.cert{cursor:pointer;text-align:center}
+.cert img{width:100%;height:160px;object-fit:cover;border-radius:10px;margin-bottom:10px}
+.modal{position:fixed;inset:0;background:#000d;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;z-index:20;cursor:zoom-out;padding:20px;color:#fff;text-align:center}
+.modal img{max-width:92vw;max-height:80vh;border-radius:10px}
+.detail{position:relative;background:var(--card);color:var(--fg);max-width:700px;width:100%;max-height:90vh;overflow:auto;padding:20px;border-radius:14px;text-align:left;cursor:default}
+.detail img{width:100%;max-height:50vh;object-fit:contain;border-radius:10px;margin-bottom:10px}
+.detail .x{position:absolute;top:10px;right:12px;background:var(--ac);color:#fff;border:0;border-radius:50%;width:32px;height:32px;cursor:pointer}
 @media(max-width:760px){.burger{display:block}nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--bg);padding:16px}nav.open{display:flex}}

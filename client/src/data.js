@@ -25,12 +25,17 @@ export const timeline = [
   { year: 'May 2026 – August 2026', title: 'Project Intern', place: 'IDEAS-TIH Kolkata', note: 'Have built AI-Powered Career Guidance System' }
 ];
 export const achievements = [
-  '5-Day AI Agents: Intensive Vibe Coding Course Badge',
-  'Red Hat System Administration I (RH124 - RHA) - Ver. 10',
-  'Database Management System Part-1, certification from Infosys springboard',
-  'Kaggle- Machine Learning Course Certification',
-  'Honorable mention in weekly coding contest (2nd and 4th semester)',
-  'Cleared Smart India Hackathon internal rounds',
-  'McKinsey.org Forward Program Certification',
-  '2nd Prize, National Science Day Presentation – Hydrogen as a Future Fuel',
+  { title: '5-Day AI Agents: Intensive Vibe Coding Course Badge', image: '/certs/ai-agents.png' },
+  { title: 'Red Hat System Administration I (RH124 - RHA) - Ver. 10', image: '/certs/redhat.png' },
+  { title: 'Database Management System Part-1, Infosys Springboard', image: '/certs/dbms.png' },
+  { title: 'Kaggle - Machine Learning Course Certification', image: '/certs/kaggle.png' },
+  { title: 'Honorable mention in weekly coding contest (2nd and 4th semester)', image: '/certs/coding-contest.png' },
+  { title: 'Kaggle - Data Visualization Cetification', image: '/certs/data.png' },
+  { title: 'McKinsey.org Forward Program Certification', image: '/certs/mckinsey.png' },
+];
+
+export const internships = [
+  { company: 'Sri Satya Sai Institute of Actuaries', role: 'Developer intern', duration: 'Jun 2026 – Jul 2026', desc: 'Developed ClaimGuard, an AI-powered data quality assessment tool for insurance claims datasets that detects missing values, duplicates, outliers, invalid dates, and other data inconsistencies. Implemented a normalized quality scoring system, interactive dashboard, and Google Gemini-powered executive reports with downloadable summaries.', image: '/internships/intern1.png' },
+  { company: 'JK Lakshmipat University', role: 'Research Intern', duration: 'May 2026 – Jul 2026', desc: 'Worked on research question, Does Masked Autoencoder (MAE) pre-training improve ECG arrhythmia classification compared to training from scratch?', image: '/internships/intern2.png' },
+  { company: 'IDEAS-TIH', role: 'Artificial Intellegence intern', duration: 'Jun 2026 – Aug 2026', desc: 'Developed an AI-powered personalized career guidance system that recommends suitable careers based on student profile, skills, interests and academic background.', image: '/internships/intern3.png' },
 ];

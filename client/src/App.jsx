@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { API, links, roles, skills, projects, timeline, achievements } from './data.js';
+import { API, links, roles, skills, projects, timeline, achievements, internships } from './data.js';
 
 const Reveal = ({ children, delay = 0 }) => (
   <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay }}>{children}</motion.div>
@@ -41,6 +41,56 @@ function Contact() {
   );
 }
 
+function Achievements() {
+  const [sel, setSel] = useState(null);
+  return (
+    <>
+      <div className="grid">
+        {achievements.map((a) => (
+          <motion.div whileHover={{ y: -6 }} className="card cert" key={a.title} onClick={() => setSel(a)}>
+            <img src={a.image} alt={a.title} loading="lazy" onError={(e) => (e.target.style.display = 'none')} />
+            <p>{a.title}</p>
+          </motion.div>
+        ))}
+      </div>
+      {sel && (
+        <div className="modal" onClick={() => setSel(null)}>
+          <img src={sel.image} alt={sel.title} />
+          <p>{sel.title} · click anywhere to close</p>
+        </div>
+      )}
+    </>
+  );
+}
+
+function Internships() {
+  const [sel, setSel] = useState(null);
+  return (
+    <>
+      <div className="grid">
+        {internships.map((i) => (
+          <motion.div whileHover={{ y: -6 }} className="card cert" key={i.company} onClick={() => setSel(i)}>
+            <img src={i.image} alt={i.company} loading="lazy" onError={(e) => (e.target.style.display = 'none')} />
+            <h3>{i.company}</h3>
+            <p className="muted">{i.role} · {i.duration}</p>
+          </motion.div>
+        ))}
+      </div>
+      {sel && (
+        <div className="modal" onClick={() => setSel(null)}>
+          <div className="detail" onClick={(e) => e.stopPropagation()}>
+            <button className="x" onClick={() => setSel(null)}>✕</button>
+            <img src={sel.image} alt={sel.company} />
+            <h3>{sel.company}</h3>
+            <p className="muted">{sel.role} · {sel.duration}</p>
+            <p>{sel.desc}</p>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
+
 function Home() {
   const [tag, setTag] = useState('All');
   const tags = ['All', ...new Set(projects.flatMap((p) => p.tech))];
@@ -49,7 +99,7 @@ function Home() {
     <>
       <section id="home" className="hero">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <p>Hi, I'm</p><h1>Bhupathi Likhitha</h1>
+          <p>Hi, I'm</p><h1>Likhitha Bhupathi</h1>
           <h2><Typewriter /></h2>
           <div className="row">
             <a className="btn" href={`${API}/api/resume/pdf`}>Download Resume (PDF)</a>
@@ -59,8 +109,12 @@ function Home() {
       </section>
 
       <section id="about"><Reveal><h2 className="title">About Me</h2>
-        <div className="about"><div className="avatar">BL</div>
-          <div><p>Computer Science undergraduate with strong academic performance and hands-on experience in technical projects, data analysis and student leadership. I enjoy hackathons, academic coordination and applying technology to real problems.</p>
+        <div className="about">
+          <img className="photo" src="/profile.png" alt="Bhupathi Likhitha" />
+        <div></div>
+          <div><p>I'm a Computer Science undergraduate at JK Lakshmipat University with a strong academic foundation and a growing focus on Data Science, Artificial Intelligence, and Machine Learning. I enjoy turning ideas into practical solutions through technical projects, data-driven problem-solving, and collaborative learning.
+
+Beyond academics, I value student leadership, academic coordination, and exploring opportunities that challenge me to learn and build. I'm particularly interested in applying technology to real-world problems and continuously expanding my technical skills.</p>
             <p><b>Location:</b> India &nbsp;|&nbsp; <b>Status:</b> Student (B.Tech CSE, JKLU) &nbsp;|&nbsp; <b>Also:</b> B.Sc Data Science, IIT Madras</p></div></div></Reveal></section>
 
       <section id="skills"><h2 className="title">Skills</h2>
@@ -93,8 +147,13 @@ function Home() {
           </motion.div>))}</div>
       </section>
 
+      <section id="internships"><Reveal><h2 className="title">Internships</h2>
+        <Internships />
+      </Reveal></section>
+
       <section id="achievements"><Reveal><h2 className="title">Certifications & Achievements</h2>
-        <ul className="ach">{achievements.map((a) => <li key={a}>{a}</li>)}</ul></Reveal></section>
+        <Achievements />
+      </Reveal></section>
 
       <section id="contact"><Reveal><h2 className="title">Contact</h2><Contact /></Reveal></section>
     </>
@@ -107,7 +166,7 @@ export default function App() {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
   const [open, setOpen] = useState(false);
   useEffect(() => { document.documentElement.dataset.theme = theme; localStorage.setItem('theme', theme); }, [theme]);
-  const nav = ['home', 'about', 'skills', 'projects', 'timeline', 'achievements', 'contact'];
+  const nav = ['home', 'about', 'skills', 'projects', 'timeline','internships','achievements', 'contact'];
   return (
     <>
       <header className="nav">
