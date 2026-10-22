@@ -139,7 +139,7 @@ VITE_API_URL=http://localhost:5000
 **Bhupathi Likhitha**
 B.Tech CSE, JK Lakshmipati University · B.Sc Data Science, IIT Madras
 
-📧 bhupathilikhitha@jklu.edu.in
+📧 likhithabhupathi2006@gmail.com
 🔗 [LinkedIn](https://www.linkedin.com/in/likhitha-bhupathi-21a570321) · [GitHub](https://github.com/likhithabhupathi2006-alt)
 
 ---
